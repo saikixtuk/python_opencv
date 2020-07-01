@@ -22,7 +22,6 @@ class FaceAnalys:
 
     def __init__(self, img):
         curdir = os.path.dirname(__file__) + "/"
-        self.now_datetime = datetime.datetime.now()
         self.face_path = curdir+'base_data/haarcascade_frontalface_default.xml'
         self.push_path = curdir+"img/push/"
         self.get_path = curdir+"img/"
@@ -33,9 +32,9 @@ class FaceAnalys:
         """
         メインスクリプト関数
         """
-        print("【{}】実行開始.".format(self.now_datetime))
+        print("【{}】実行開始.".format(datetime.datetime.now()))
         self.face_cac()
-        print("【{}】実行終了.".format(self.now_datetime))
+        print("【{}】実行終了.".format(datetime.datetime.now()))
 
     def face_cac(self):
         """
@@ -99,6 +98,7 @@ class FaceAnalys:
         face_cut = src[y_val:y_val+h_val, x_val:x_val+w_val]
         img_path = self.cut_path + str(count) + '.jpg'
         cv2.imwrite(img_path, face_cut)
+        print(img_path)
 
 
 if __name__ == "__main__":

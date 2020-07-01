@@ -65,6 +65,8 @@ class Rename:
                 name_count = name_count + 1
             if ext == "png":
                 print(i + "はjpg形式に変換されました.")
+        if name_count == 0:
+            print("認証できる画像が存在しませんでした。")
 
     def write_text(self, txt, parent):
         """
